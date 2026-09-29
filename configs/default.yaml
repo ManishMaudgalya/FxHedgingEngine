@@ -1,0 +1,20 @@
+synthetic_market:
+  currency_pair: EURUSD
+  seed: 42
+  start_time: "2026-01-02T08:00:00+00:00"
+  num_events: 5000
+  event_interval_ms: 100
+  initial_mid_price: 1.10000
+  price_tick: 0.00001
+  base_volatility_bps: 0.10
+  low_volatility_multiplier: 0.45
+  high_volatility_multiplier: 2.50
+  base_spread_bps: 0.70
+  base_depth: 5000000
+  trade_probability: 0.72
+  min_regime_duration: 150
+  max_regime_duration: 450
+  directional_drift_bps: 0.035
+  mean_reversion_strength: 0.035
+  output_path: data/synthetic/eurusd_events.parquet
+

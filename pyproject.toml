@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fx-hedging-engine"
+version = "0.1.0"
+description = "Research-grade event-driven simulation for adaptive FX inventory hedging"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "FX Hedging Engine contributors" }]
+dependencies = [
+  "numpy>=2.0,<3",
+  "polars>=1.15,<2",
+  "pyarrow>=18,<23",
+  "PyYAML>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10",
+  "pytest-cov>=6,<8",
+]
+
+[project.scripts]
+fx-generate-synthetic = "fx_hedging.data.simulator:main"
+fx-capture-ibkr = "fx_hedging.data.ibkr:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fx_hedging"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["fx_hedging"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

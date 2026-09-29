@@ -1,0 +1,29 @@
+fxengine_venv/
+local_reference/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Generated datasets and experiment artifacts
+data/raw/*
+data/processed/*
+data/synthetic/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/synthetic/.gitkeep
+results/
+
+# Local tooling
+.DS_Store
+.idea/
+.vscode/
+graphify-out/

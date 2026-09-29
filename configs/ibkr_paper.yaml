@@ -1,0 +1,17 @@
+# No username, password, or account number belongs in this file. Authentication
+# occurs in a running TWS or IB Gateway session.
+ibkr_market_data:
+  host: 127.0.0.1
+  # Set this to the Socket Port displayed by your paper TWS/IB Gateway session.
+  port: 7497
+  client_id: 17
+  base_currency: EUR
+  quote_currency: USD
+  exchange: IDEALPRO
+  duration_seconds: 300
+  connection_timeout_seconds: 10
+  # FX trade prints/aggressor direction may not be available. BidAsk is the
+  # reliable core stream; enable this only after verifying AllLast in TWS.
+  include_trades: false
+  output_path: data/raw/ibkr_eurusd_ticks.parquet
+
